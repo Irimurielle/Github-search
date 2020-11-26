@@ -1,1 +1,27 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="gitform form-group text-center">
+        <input class="form-control" type="text" placeholder="Github Username" name="gituser" [(ngModel)]="gitusername">
+        <button type="submit" class="btn" (click)="SearchName()">Search</button>
+     </div>
+    <div class="content">
+        <div class="row">
+            <div class="box col-md-6">
+                <h3 appHighlight class="username"><strong>GitHub Name: {{user.username}}</strong></h3>
+                <img src="{{user.avatar_url}}">
+            <div class="col-md-6">
+                <div>
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Username: </strong>{{user.username}}</li>
+                            <li class="list-group-item"><strong>Repositories: </strong>{{user.public_repos}}</li>
+                            <li class="list-group-item"><strong>Followers: </strong>{{user.followers}}</li>
+                            <li class="list-group-item"><strong>Following: </strong>{{user.following}}</li>
+                            <li class="list-group-item"><strong>Created on: </strong>{{user.created_at| date}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <a target="_blank" href="{{user.html_url}}" class="btn btn-grey btn-md">Github profile</a>
+            </div>
+        </div>
+    </div>
+</div>
