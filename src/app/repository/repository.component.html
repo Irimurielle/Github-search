@@ -1,1 +1,30 @@
-<p>repository works!</p>
+<div class="container">
+    <h3 class="text-center"><strong>User Repositories</strong></h3>
+    <div class="gitform form-group text-center">
+        <input class="form-control" name="gituser" type="text" placeholder="Github Username" [(ngModel)]="gitusername">
+        <button type="submit" class="btn" (click)="SearchRepo()">Search</button>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-4 card" *ngFor="let repo of repos">
+                <div class="card-body">
+                    <h4 class="card-title"><a target="_blank" href="{{repos.name}}">{{repos.name}}</a></h4>
+                    <hr>
+                    <ul class="list-group">
+                        <li class="list-group-item">{{repos.name}}</li>
+                        <li class="list-group-item">{{repos.description}}</li>
+                        <li class="list-group-item">{{repos.created_at| date}}</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <ul class="list-unstyled list-inline font-small">
+                        <a target="_blank" href="{{repos.html_url}}" class="btn btn-grey btn-md"> View Repository</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer text-center">
+            <p>© 2019 Copyright: Murielle IRIBORI</p>
+        </footer>
+    </div>
+</div>
