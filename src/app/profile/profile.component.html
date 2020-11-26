@@ -1,26 +1,40 @@
 <div class="container">
-    <div class="gitform form-group text-center">
-        <input class="form-control" type="text" placeholder="Github Username" name="gituser" [(ngModel)]="gitusername">
-        <button type="submit" class="btn" (click)="SearchName()">Search</button>
-     </div>
-    <div class="content">
-        <div class="row">
-            <div class="box col-md-6">
-                <h3 appHighlight class="username"><strong>GitHub Name: {{user.username}}</strong></h3>
-                <img src="{{user.avatar_url}}">
-            <div class="col-md-6">
-                <div>
-                    <div>
-                        <ul class="list-group">
-                            <li class="list-group-item"><strong>Username: </strong>{{user.username}}</li>
-                            <li class="list-group-item"><strong>Repositories: </strong>{{user.public_repos}}</li>
-                            <li class="list-group-item"><strong>Followers: </strong>{{user.followers}}</li>
-                            <li class="list-group-item"><strong>Following: </strong>{{user.following}}</li>
-                            <li class="list-group-item"><strong>Created on: </strong>{{user.created_at| date}}</li>
-                        </ul>
+    <h3 class="text-center"><strong>Github User Search</strong></h3>
+    <div class="col-md-12">
+        <form class="text-center">
+            <input class="form-control mr-sm-2" type="text" placeholder="Github Username" aria-label="Search" [(ngModel)]="gitusername" name = "gituser">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="SearchName()"> <i class="fas fa-search"></i>Search</button>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 appHighlight><strong>{{user.username}}</strong></h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12">
+                                    <img src="{{user.avatar_url}}">
+                                </div>
+                                <div class="col-md-7 offset-md-1 col-md-8">
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><strong><i class="fas fa-user-circle"></i> Username: </strong>{{user.username}}</li>
+                                        <li class="list-group-item"><strong><i class="fas fa-code-branch"></i> Repositories: </strong>{{user.public_repos}}</li>
+                                        <li class="list-group-item"><strong><i class="fas fa-user-friends"></i> Followers: </strong>{{user.followers}}</li>
+                                        <li class="list-group-item"><strong><i class="fas fa-users"></i> Following: </strong>{{user.following}}</li>
+                                        <li class="list-group-item"><strong><i class="far fa-calendar"></i> Created on: </strong>{{user.created_at| date}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a target="_blank" href="{{user.html_url}}" class="btn btn-success">Github profile</a>
+                        </div>
                     </div>
                 </div>
-                <a target="_blank" href="{{user.html_url}}" class="btn btn-grey btn-md">Github profile</a>
             </div>
         </div>
     </div>

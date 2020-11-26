@@ -1,0 +1,14 @@
+img{
+    height: 300px;
+    width: 300px;
+}
+.card{
+    width: 100%;
+}
+.card-body{
+    height: 350px;
+    width: 100%;
+}
+ul{
+    width: auto;
+}
